@@ -50,17 +50,17 @@
   };
 </script>
 
-  <meta name="description" content="八个生命函数1.beforeCreate在实例创建之前，数据还没有初始化，vue实例的挂载元素el和数据对象都为空，也就是在var vm = new Vue()这个阶段。在这个阶段写个loading事件,在加载实例时触发。 2.created在created阶段,vue实例的数据对象data有了，el还没有，相当于js如下 12345var vm = new Vue(&amp;#123;    el: &amp;apos;">
+  <meta name="description" content="vue组件插槽基本用法如何理解插槽：就是定义的时候挖坑，内容由使用的时候用户自己去填写 先上代码，通过代码很直观的知道插槽到底有什么作用了 12345&amp;lt;div id=&quot;app&quot;&amp;gt;  &amp;lt;alert-box&amp;gt;密码写错了&amp;lt;&#x2F;alert-box&amp;gt;  &amp;lt;alert-box&amp;gt;账号写错了&amp;lt;&#x2F;alert-box&amp;gt;  &amp;lt;alert-box&amp;gt;邮箱">
 <meta property="og:type" content="article">
-<meta property="og:title" content="“vue中的生命周期钩子函数”">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;01&#x2F;%E2%80%9Cvue%E4%B8%AD%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90%E5%87%BD%E6%95%B0%E2%80%9D&#x2F;index.html">
+<meta property="og:title" content="vue组件插槽基本用法">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;04&#x2F;%E4%BD%BF%E7%94%A8vue-cli%E6%9E%84%E5%BB%BA%E9%A1%B9%E7%9B%AE&#x2F;index.html">
 <meta property="og:site_name" content="余先生的博客">
-<meta property="og:description" content="八个生命函数1.beforeCreate在实例创建之前，数据还没有初始化，vue实例的挂载元素el和数据对象都为空，也就是在var vm = new Vue()这个阶段。在这个阶段写个loading事件,在加载实例时触发。 2.created在created阶段,vue实例的数据对象data有了，el还没有，相当于js如下 12345var vm = new Vue(&amp;#123;    el: &amp;apos;">
+<meta property="og:description" content="vue组件插槽基本用法如何理解插槽：就是定义的时候挖坑，内容由使用的时候用户自己去填写 先上代码，通过代码很直观的知道插槽到底有什么作用了 12345&amp;lt;div id=&quot;app&quot;&amp;gt;  &amp;lt;alert-box&amp;gt;密码写错了&amp;lt;&#x2F;alert-box&amp;gt;  &amp;lt;alert-box&amp;gt;账号写错了&amp;lt;&#x2F;alert-box&amp;gt;  &amp;lt;alert-box&amp;gt;邮箱">
 <meta property="og:locale" content="zh-Cn">
-<meta property="og:updated_time" content="2019-11-01T13:49:50.753Z">
+<meta property="og:updated_time" content="2019-11-04T13:28:56.701Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2019/11/01/%E2%80%9Cvue%E4%B8%AD%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90%E5%87%BD%E6%95%B0%E2%80%9D/">
+<link rel="canonical" href="http://yoursite.com/2019/11/04/%E4%BD%BF%E7%94%A8vue-cli%E6%9E%84%E5%BB%BA%E9%A1%B9%E7%9B%AE/">
 
 
 <script id="page-configurations">
@@ -74,7 +74,7 @@
   };
 </script>
 
-  <title>“vue中的生命周期钩子函数” | 余先生的博客</title>
+  <title>vue组件插槽基本用法 | 余先生的博客</title>
   
 
 
@@ -173,7 +173,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Cn">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/01/%E2%80%9Cvue%E4%B8%AD%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90%E5%87%BD%E6%95%B0%E2%80%9D/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/04/%E4%BD%BF%E7%94%A8vue-cli%E6%9E%84%E5%BB%BA%E9%A1%B9%E7%9B%AE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -186,7 +186,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          “vue中的生命周期钩子函数”
+          vue组件插槽基本用法
         </h1>
 
         <div class="post-meta">
@@ -197,7 +197,7 @@
               <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
-              <time title="Erstellt: 2019-11-01 20:29:55 / Geändert am: 21:49:50" itemprop="dateCreated datePublished" datetime="2019-11-01T20:29:55+08:00">2019-11-01</time>
+              <time title="Erstellt: 2019-11-04 20:55:15 / Geändert am: 21:28:56" itemprop="dateCreated datePublished" datetime="2019-11-04T20:55:15+08:00">2019-11-04</time>
             </span>
 
           
@@ -211,16 +211,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="八个生命函数"><a href="#八个生命函数" class="headerlink" title="八个生命函数"></a>八个生命函数</h1><h2 id="1-beforeCreate"><a href="#1-beforeCreate" class="headerlink" title="1.beforeCreate"></a>1.beforeCreate</h2><p>在实例创建之前，数据还没有初始化，vue实例的挂载元素el和数据对象都为空，也就是在<code>var vm = new Vue()</code>这个阶段。在这个阶段写个loading事件,在加载实例时触发。</p>
-<h2 id="2-created"><a href="#2-created" class="headerlink" title="2.created"></a>2.created</h2><p>在created阶段,vue实例的数据对象data有了，el还没有，相当于js如下</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">''</span>,</span><br><span class="line">    data: &#123;&#125;,</span><br><span class="line">    methods: &#123;&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>初始化完成时的事件写在这个阶段，如在这个阶段结束loading事件</p>
-<h2 id="3-beforeMount"><a href="#3-beforeMount" class="headerlink" title="3.beforeMount"></a>3.beforeMount</h2><p>组件即将挂载，vue实例的$el和和data都初始化完成，但还是挂载之前为虚拟的dom节点，data.message还未替换，相当于js如下</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">'#app'</span>,</span><br><span class="line">    data: &#123;</span><br><span class="line">        uname: <span class="string">''</span>,</span><br><span class="line">        password: <span class="string">''</span></span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>在这个阶段可以做异步请求接口数据、数据修改。</p>
-<h2 id="4-mounted"><a href="#4-mounted" class="headerlink" title="4.mounted"></a>4.mounted</h2><p>vue实例挂载完成，data.message成功渲染，使用<strong>真实DOM</strong>替换<strong>虚拟DOM</strong>。这个阶段可以操作真实DOM节点。到此阶段，第一次页面加载时会触发的钩子函数全部执行完成。</p>
-<h2 id="5-beforeUpdata-updated"><a href="#5-beforeUpdata-updated" class="headerlink" title="5.beforeUpdata/updated"></a>5.beforeUpdata/updated</h2><p>当data发生变化时，会触发beforeUpdata和updated方法。如果对数据统一处理，在这里写上相应函数。具体场景就比如修改功能。</p>
-<h2 id="6-beforeDestroy-destroyed"><a href="#6-beforeDestroy-destroyed" class="headerlink" title="6.beforeDestroy/destroyed"></a>6.beforeDestroy/destroyed</h2><p>在执行destroy方法后，对data的改变不会再触发周期函数，说明此时vue实例已经解除了事件监听以及和dom的绑定，但是dom结构依然存在。<br>beforeDestroy阶段可以做一个确认停止事件的确认框。<br>这两个钩子函数都可以用来做善后,把一些计时器，第三方库实例化出来的实例销毁</p>
+        <h3 id="vue组件插槽基本用法"><a href="#vue组件插槽基本用法" class="headerlink" title="vue组件插槽基本用法"></a>vue组件插槽基本用法</h3><p>如何理解插槽：就是定义的时候挖坑，内容由使用的时候用户自己去填写</p>
+<p>先上代码，通过代码很直观的知道插槽到底有什么作用了</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">alert-box</span>&gt;</span>密码写错了<span class="tag">&lt;/<span class="name">alert-box</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">alert-box</span>&gt;</span>账号写错了<span class="tag">&lt;/<span class="name">alert-box</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">alert-box</span>&gt;</span>邮箱格式不对<span class="tag">&lt;/<span class="name">alert-box</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  组件插槽：父组件向子组件传递内容</span></span><br><span class="line"><span class="comment">*/</span>s</span><br><span class="line">Vue.component(<span class="string">'alert-box'</span>, &#123;</span><br><span class="line">  template: <span class="string">`</span></span><br><span class="line"><span class="string">    &lt;div&gt;</span></span><br><span class="line"><span class="string">      &lt;strong&gt;ERROR:&lt;/strong&gt;</span></span><br><span class="line"><span class="string">      &lt;p&gt;报错信息：&lt;slot&gt;&lt;/slot&gt;&lt;/p&gt;</span></span><br><span class="line"><span class="string">    &lt;/div&gt;</span></span><br><span class="line"><span class="string">  `</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>通过父组件调用子组件，然后在调用的过程中，在子组件内部放入内容，比如上面例子中插入了一些原生的html标签。</p>
+<p>在子组件中，用 <slot> 标签接收。</p>
+<p>最后中页面中输出的内容如上图所示，在Elements里，也可以看到html的布局。</p>
+<p>以上就是在组件中插槽的最基本用法。</p>
 
     </div>
 
@@ -234,14 +232,14 @@
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
+                <a href="/2019/11/01/%E2%80%9Cvue%E4%B8%AD%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90%E5%87%BD%E6%95%B0%E2%80%9D/" rel="next" title="“vue中的生命周期钩子函数”">
+                  <i class="fa fa-chevron-left"></i> “vue中的生命周期钩子函数”
+                </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2019/11/04/%E4%BD%BF%E7%94%A8vue-cli%E6%9E%84%E5%BB%BA%E9%A1%B9%E7%9B%AE/" rel="prev" title="vue组件插槽基本用法">
-                  vue组件插槽基本用法 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
       </footer>
@@ -280,7 +278,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#八个生命函数"><span class="nav-number">1.</span> <span class="nav-text">八个生命函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-beforeCreate"><span class="nav-number">1.1.</span> <span class="nav-text">1.beforeCreate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-created"><span class="nav-number">1.2.</span> <span class="nav-text">2.created</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-beforeMount"><span class="nav-number">1.3.</span> <span class="nav-text">3.beforeMount</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-mounted"><span class="nav-number">1.4.</span> <span class="nav-text">4.mounted</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-beforeUpdata-updated"><span class="nav-number">1.5.</span> <span class="nav-text">5.beforeUpdata/updated</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-beforeDestroy-destroyed"><span class="nav-number">1.6.</span> <span class="nav-text">6.beforeDestroy/destroyed</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#vue组件插槽基本用法"><span class="nav-number">1.</span> <span class="nav-text">vue组件插槽基本用法</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
